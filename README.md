@@ -27,7 +27,7 @@ rtw_8821cs: probe of mmc2:0001:1 failed with error -22
 
 1. **SDIO timing bug** — The `rtw88_8821cs` driver loads too early during boot before the SDIO bus is fully ready. The previous workaround (unload/reload driver modules) was known but incomplete.
 
-2. **Missing `wpasupplicant` package** — This is the part nobody caught. NetworkManager **cannot manage WiFi interfaces** without `wpa_supplicant` installed. On minimal Debian/Ubuntu server images, it's not included by default. Even with a successful driver reload, WiFi stays "unavailable" without it.
+2. **Missing `wpasupplicant` package** — This is the part nobody caught. NetworkManager **cannot manage WiFi interfaces** without `wpa_supplicant` installed. On minimal Debian/Ubuntu server images for this board, it's not included by default.
 
 ## Quick Fix
 
@@ -116,7 +116,7 @@ sudo nmcli dev wifi connect "YourSSID" password "YourPassword"
 ## References
 
 - [Joshua-Riek/ubuntu-rockchip#1007](https://github.com/Joshua-Riek/ubuntu-rockchip/issues/1007) — Original issue report
-- [Ameridroid Indiedroid Nova](https://ameridroid.com/products/indiedroid-nova) — Where to buy
+- [Ameridroid Indiedroid Nova](https://ameridroid.com/products/indiedroid-nova?ref=ioqothsk) — Where to buy
 
 ## License
 
